@@ -1,5 +1,5 @@
 # Server creation
-This is pretty straight forward in the Hetzner console: 
+This is pretty straight forward in the Hetzner console:
 
 1. Create server
 2. Good defaults
@@ -83,6 +83,13 @@ console.
 Some error checking is performed; should there be problems the only real
 recourse is to read the init.sh, which is written as a mostly straight forward
 shell script.
+
+# Configurations
+
+After initializing the server, we needed to configure it to allow users to
+create their account without the need for an invitation. This can be done in
+the System Console (you need to login to Mattermost as an admin user) and in
+the `Signup` menu, set the `Enable Open Server:` option to true.
 
 # Health checks
 TODO
