@@ -87,7 +87,7 @@
     "DisableBotsWhenOwnerIsDeactivated": true,
     "EnableBotAccountCreation": false,
     "EnableSVGs": false,
-    "EnableLatex": false,
+    "EnableLatex": true,
     "EnableInlineLatex": true,
     "PostPriority": true,
     "AllowPersistentNotifications": true,
