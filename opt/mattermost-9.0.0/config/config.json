@@ -113,7 +113,7 @@
     "SiteName": "Mattermost",
     "MaxUsersPerTeam": 50,
     "EnableUserCreation": true,
-    "EnableOpenServer": false,
+    "EnableOpenServer": true,
     "EnableUserDeactivation": false,
     "RestrictCreationToDomains": "",
     "EnableCustomUserStatuses": true,
