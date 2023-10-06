@@ -10,7 +10,7 @@ function help {
 # Default user to whoami, so that the letsencrypt are decrypted by default with
 # the user that is running the script. If the crypt/name-* does not match the
 # current user you can override it with --user.
-user=$(whoami)
+suser=$(whoami)
 argv=()
 
 while [[ $# -gt 0 ]]; do
@@ -20,7 +20,7 @@ while [[ $# -gt 0 ]]; do
             exit 0
             ;;
         --user)
-            user="$2"
+            suser="$2"
             shift
             ;;
         *)
@@ -89,8 +89,8 @@ done
 
 rsync -av etc lib root@${host}:/stow
 rsync -av --chown=mattermost:mattermost --chmod=g+w opt/mattermost-* root@${host}:/stow/opt
-gpg --decrypt secrets/j-letsencrypt.tar.gz.gpg | ssh root@${host} "tar xzf - -C /stow/etc"
-gpg --decrypt secrets/j-mm.home.tar.gz.gpg | ssh root@${host} \
+gpg --decrypt secrets/${suser}-letsencrypt.tar.gz.gpg | ssh root@${host} "tar xzf - -C /stow/etc"
+gpg --decrypt secrets/${suser}-mm.home.tar.gz.gpg | ssh root@${host} \
     "su - mattermost -c 'tar xzf - -C /home/mattermost'"
 
 ssh -q root@${host} "bash -" << EOF
