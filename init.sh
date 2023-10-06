@@ -89,7 +89,7 @@ done
 
 rsync -av etc lib root@${host}:/stow
 rsync -av --chown=mattermost:mattermost --chmod=g+w opt/mattermost-* root@${host}:/stow/opt
-gpg --decrypt cert/j-letsencrypt.tar.gz.gpg | ssh root@${host} "tar xzf - -C /stow/etc"
+gpg --decrypt secrets/j-letsencrypt.tar.gz.gpg | ssh root@${host} "tar xzf - -C /stow/etc"
 gpg --decrypt secrets/j-mm.home.tar.gz.gpg | ssh root@${host} \
     "su - mattermost -c 'tar xzf - -C /home/mattermost'"
 
