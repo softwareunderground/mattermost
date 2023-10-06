@@ -90,10 +90,8 @@ done
 rsync -av etc lib root@${host}:/stow
 rsync -av --chown=mattermost:mattermost --chmod=g+w opt/mattermost-* root@${host}:/stow/opt
 gpg --decrypt cert/j-letsencrypt.tar.gz.gpg | ssh root@${host} "tar xzf - -C /stow/etc"
-
-set +x
-mmuserpw=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | head -c 25)
-set -x
+gpg --decrypt secrets/j-mm.home.tar.gz.gpg | ssh root@${host} \
+    "su - mattermost -c 'tar xzf - -C /home/mattermost'"
 
 ssh -q root@${host} "bash -" << EOF
     if ! su - postgres --command \
@@ -101,12 +99,10 @@ ssh -q root@${host} "bash -" << EOF
         | grep -q 1; then
 
         su - postgres --command \
-            "psql -c \"CREATE USER mmuser WITH PASSWORD '${mmuserpw}';\""
-
-        echo "Writing mattermost .pgpass"
-        echo "*:*:mattermost:mmuser:${mmuserpw}" > /home/mattermost/.pgpass
-        chmod 0600 /home/mattermost/.pgpass
-        chown mattermost:mattermost /home/mattermost/.pgpass
+            "psql -f -" << END
+                CREATE USER mmuser WITH PASSWORD
+                '$(gpg --decrypt secrets/mm.home.tar.gz.gpg | tar -O -xzf - .pgpass | cut -d : -f 5)';
+END
     fi
 
     if ! su - postgres --command "psql -lq" | grep -qw mattermost; then
