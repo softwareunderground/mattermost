@@ -16,6 +16,7 @@ WorkingDirectory=/opt/mattermost-9.0.0
 User=mattermost
 Group=mattermost
 LimitNOFILE=49152
+EnvironmentFile=/home/mattermost/mm.env
 
 [Install]
 WantedBy=multi-user.target
