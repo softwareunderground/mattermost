@@ -235,7 +235,7 @@
         "EnableSignInWithUsername": true,
         "SendEmailNotifications": true,
         "UseChannelInEmailNotifications": false,
-        "RequireEmailVerification": false,
+        "RequireEmailVerification": true,
         "FeedbackName": "Software Underground",
         "FeedbackEmail": "mattermost@softwareunderground.org",
         "ReplyToAddress": "",
