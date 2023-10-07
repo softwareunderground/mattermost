@@ -91,6 +91,19 @@ create their account without the need for an invitation. This can be done in
 the System Console (you need to login to Mattermost as an admin user) and in
 the `Signup` menu, set the `Enable Open Server:` option to true.
 
+# SMTP setup
+Hetzner is a cheap public cloud vendor, and as a consequence suffer terribly
+under spammers and bots. As a result, as a policy they by default firewall
+outgoing email ports (25, 465), which makes running a delivery agent a pain.
+Running our own service is also terrible because we have to get through the
+filters and whitelists of google et al.
+
+Our email system is provided by hover.com, and we use them as a simple mail
+delivery agent. The auth is encrypted and checked in, and mattermost reads
+email authentication from its environment.
+
+https://docs.hetzner.com/cloud/servers/faq#why-can-i-not-send-any-mails-from-my-server
+
 # Health checks
 TODO
 
