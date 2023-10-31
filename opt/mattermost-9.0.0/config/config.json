@@ -271,7 +271,7 @@
         "VaryByHeader": ""
     },
     "PrivacySettings": {
-        "ShowEmailAddress": true,
+        "ShowEmailAddress": false,
         "ShowFullName": true
     },
     "SupportSettings": {
