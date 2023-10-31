@@ -117,7 +117,7 @@
         "EnableUserDeactivation": false,
         "RestrictCreationToDomains": "",
         "EnableCustomUserStatuses": true,
-        "EnableCustomBrand": false,
+        "EnableCustomBrand": true,
         "CustomBrandText": "",
         "CustomDescriptionText": "",
         "RestrictDirectMessage": "any",
