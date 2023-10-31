@@ -534,13 +534,13 @@
         "BatchSize": 10000,
         "DownloadExportResults": false,
         "GlobalRelaySettings": {
-        "CustomerType": "A9",
-        "SMTPUsername": "",
-        "SMTPPassword": "",
-        "EmailAddress": "",
-        "SMTPServerTimeout": 1800
-    }
-  },
+            "CustomerType": "A9",
+            "SMTPUsername": "",
+            "SMTPPassword": "",
+            "EmailAddress": "",
+            "SMTPServerTimeout": 1800
+        }
+    },
     "JobSettings": {
         "RunJobs": true,
         "RunScheduler": true,
