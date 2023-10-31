@@ -158,7 +158,7 @@
     },
     "LogSettings": {
         "EnableConsole": true,
-        "ConsoleLevel": "INFO",
+        "ConsoleLevel": "ERROR",
         "ConsoleJson": true,
         "EnableColor": false,
         "EnableFile": true,
