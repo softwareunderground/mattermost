@@ -76,7 +76,7 @@
         "EnablePreviewFeatures": true,
         "EnableTutorial": true,
         "EnableOnboardingFlow": true,
-        "ExperimentalEnableDefaultChannelLeaveJoinMessages": true,
+        "ExperimentalEnableDefaultChannelLeaveJoinMessages": false,
         "ExperimentalGroupUnreadChannels": "disabled",
         "EnableAPITeamDeletion": false,
         "EnableAPITriggerAdminNotifications": false,
