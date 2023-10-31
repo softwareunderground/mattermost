@@ -555,7 +555,33 @@
         "EnableHealthCheck": true,
         "Directory": "./plugins",
         "ClientDirectory": "./client/plugins",
-        "Plugins": {},
+        "Plugins": {
+            "com.mattermost.calls": {
+                "allowscreensharing": true,
+                "defaultenabled": true,
+                "enableipv6": false,
+                "enablerecordings": false,
+                "enableringing": false,
+                "enablesimulcast": false,
+                "icehostoverride": "",
+                "iceserversconfigs": "[{\"urls\":[\"stun:stun.global.calls.mattermost.com:3478\"]}]",
+                "jobserviceurl": null,
+                "maxcallparticipants": 0,
+                "maxrecordingduration": 60,
+                "recordingquality": "medium",
+                "rtcdserviceurl": null,
+                "serversideturn": false,
+                "tcpserveraddress": "",
+                "tcpserverport": 8443,
+                "turncredentialsexpirationminutes": 1440,
+                "turnstaticauthsecret": "",
+                "udpserveraddress": "",
+                "udpserverport": 8443
+            },
+            "playbooks": {
+                "BotUserID": "7dycsjcnq3nq5fgm7e7bsqgbkw"
+            }
+        },
         "PluginStates": {
             "com.mattermost.calls": {
                 "Enable": true
