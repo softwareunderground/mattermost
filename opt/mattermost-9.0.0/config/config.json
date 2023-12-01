@@ -114,7 +114,7 @@
         "MaxUsersPerTeam": 2500,
         "EnableUserCreation": true,
         "EnableOpenServer": true,
-        "EnableUserDeactivation": false,
+        "EnableUserDeactivation": true,
         "RestrictCreationToDomains": "",
         "EnableCustomUserStatuses": true,
         "EnableCustomBrand": true,
