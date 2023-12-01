@@ -110,7 +110,7 @@
         "AllowSyncedDrafts": true
     },
     "TeamSettings": {
-        "SiteName": "Mattermost",
+        "SiteName": "Software Underground",
         "MaxUsersPerTeam": 2500,
         "EnableUserCreation": true,
         "EnableOpenServer": true,
