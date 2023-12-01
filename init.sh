@@ -47,7 +47,7 @@ debpkgs=(
     python3-certbot-nginx
 )
 
-mattermost_version=9.0.0
+mattermost_version=9.2.3
 mattermost_tarball=mattermost-${mattermost_version}-linux-amd64.tar.gz
 mattermost_url=https://releases.mattermost.com/${mattermost_version}/${mattermost_tarball}
 
