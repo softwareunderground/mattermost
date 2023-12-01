@@ -166,7 +166,7 @@
         "FileJson": true,
         "FileLocation": "",
         "EnableWebhookDebugging": true,
-        "EnableDiagnostics": true,
+        "EnableDiagnostics": false,
         "VerboseDiagnostics": false,
         "EnableSentry": true,
         "AdvancedLoggingJSON": {},
