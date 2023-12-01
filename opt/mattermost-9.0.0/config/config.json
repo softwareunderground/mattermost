@@ -587,7 +587,7 @@
                 "Enable": true
             },
             "com.mattermost.nps": {
-                "Enable": true
+                "Enable": false
             },
             "playbooks": {
                 "Enable": true
