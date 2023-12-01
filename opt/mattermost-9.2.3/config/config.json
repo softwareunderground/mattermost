@@ -270,7 +270,7 @@
         "EnableEmailBatching": false,
         "EmailBatchingBufferSize": 256,
         "EmailBatchingInterval": 30,
-        "EnablePreviewModeBanner": true,
+        "EnablePreviewModeBanner": false,
         "SkipServerCertificateVerification": false,
         "EmailNotificationContentsType": "full",
         "LoginButtonColor": "#0000",
