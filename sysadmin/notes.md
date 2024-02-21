@@ -33,7 +33,9 @@ This is pretty straight forward in the Hetzner console:
     - software-underground-1
 
 This is my public key:
+```
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHRfPUZK61TxCbBYlyAdR4/X7ulBjYiBbTk+f8FzH77mZYEHzKAsuEPbKK+y3Z32zX5HcO5zoA0lHdJ+i5DeDsNxt9MXFaA4BYdnSNyP5RTVNFruvkYOJsRU0FFoBf1D4xu7y8H6RXbCSzk9jgUmdqbhyTLHJL3nC9D5iKB5gEvlI6JrKwQFfZPgs1rzUc/LYxT9i0jdcZbuhL6Docv2jqiYIZe0cNzJxlqO2uRDchmWwwr+buVm51wngLkgZRs3ciRx3YOMEN2Bji19otn9WR1DVwodwfkjjXu9MqrYlV9Vj+3GJW++smWPMtm1q7u6ymU8r2aPwHaJNa9rre7kE7QK2Ma5TAXmBd47+g0jnnKRLovIkFa3LDMj4wHzfHcxnclP7ka4v+L6Vx42wvvZHgpzJM0cXM0AO0gfRvImYM/r9++bBtRK4kQHx8cl3tB+tzoxbVEMTLExN3dQFd6UfJQ910A0PiA+RA2tGZP9yCclyBEJT0hj0CfIgZ3k8+qgX8gq+vToTyuJQUOvZphNLsiglcSPwlBAsnUZRnsV3AsubXo5VdUwHdibQO9/xBeswAWxzydubQ2lxYEyhDfCHJ6jPkBASm7qCL6wtd25AezwJfp8SyyaeMBMtsQuKZDyi1S+6iVzQ4oDyRFdEIJfB6vozH0Qjdk+TZ41DnIQHAyw== j@lambda.is
+```
 
 # https and letsencrypt certificate
 **DO NOT TAKE THIS SECTION LIGHTLY**. If you are unsure what you are doing, stop
