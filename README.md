@@ -33,7 +33,7 @@ on the left, and then choose **Browse channels**.
 It will open a pop-up window with a list of the existing channels. By clicking
 in **Join** you can join to any channel you want.
 
-![Screen capture showing how to join a channel](_assets/join-channel.png)
+<img src="_assets/join-channel.png" alt="Screen capture showing how to join a channel" width="50%">
 
 
 ### Desktop and Mobile Apps
@@ -50,7 +50,7 @@ this case: `mattermost.softwareunderground.org`.
   particular server in your list of servers. You can choose anything you want
   for this, like `Software Underground`.
 
-![Screen capture showing how to set up the mobile app](_assets/app.jpg)
+<img src="_assets/app.jpg" alt="Screen capture showing how to set up the mobile app" width="50%">
 
 ### More information
 
