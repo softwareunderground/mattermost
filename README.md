@@ -25,8 +25,8 @@ Once you created an account, you'll be automatically added to a few channels,
 like [Agora (aka general)][general] and Off-Topic.
 But there are many more channels that you probably would like to join.
 
-To join more channels, click on the **Add Channels** option in the panel on the
-left, and then choose **Browse channels**.
+To join more channels, click on the **+** button on the top part of the panel
+on the left, and then choose **Browse channels**.
 
 ![Screen capture showing how to browse channels](_assets/browse-channels.png)
 
