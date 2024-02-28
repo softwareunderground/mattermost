@@ -7,4 +7,4 @@
 
 set -eu
 path=$(guix time-machine --commit=v1.4.0 -- build -f /opt/mattermost/mattermost.scm)
-exec ${path}/bin/mattermost -c /opt/mattermost/config/config.json
+exec ${path}/bin/mattermost -c /opt/mattermost/config/config.json "$@"
