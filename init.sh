@@ -77,6 +77,10 @@ ssh root@${host} "bash - " << EOF
     mkdir -p /stow
 EOF
 
+if [ -d root ]; then
+    rsync -av --chown=root:root root root@${host}:/stow
+fi
+
 for user in ${users[@]}; do
     if [ -d home/$user ]; then
         rsync -av --chown=$user:$user home/$user root@${host}:/stow/home
@@ -129,6 +133,7 @@ ssh -q root@${host} "bash -" << EOF
     set -xeuo pipefail
     for u in ${users[@]}; do chown -R \$u:\$u /stow/home/\$u; done
     for u in ${users[@]}; do stow -d /stow/home -t /home/\$u \$u; done
+    stow -d /stow/root -t /root root
     stow -d /stow/etc -t /etc/ssh ssh
     stow -d /stow/etc -t /etc/fail2ban fail2ban
     stow -d /stow/etc -t /etc/nginx nginx
