@@ -47,10 +47,6 @@ debpkgs=(
     python3-certbot-nginx
 )
 
-mattermost_version=9.2.3
-mattermost_tarball=mattermost-${mattermost_version}-linux-amd64.tar.gz
-mattermost_url=https://releases.mattermost.com/${mattermost_version}/${mattermost_tarball}
-
 set -x
 
 ssh root@${host} "bash - " << EOF
@@ -87,8 +83,15 @@ for user in ${users[@]}; do
     fi
 done
 
+ssh -q root@${host} "bash -" << EOF
+cd /tmp
+wget https://git.savannah.gnu.org/cgit/guix.git/plain/etc/guix-install.sh
+yes | bash guix-install.sh
+rm guix-install.sh
+EOF
+
 rsync -av etc lib root@${host}:/stow
-rsync -av --chown=mattermost:mattermost --chmod=g+w opt/mattermost-* root@${host}:/stow/opt
+rsync -av --chown=mattermost:mattermost --chmod=g+w opt/mattermost root@${host}:/stow/opt
 gpg --decrypt secrets/${suser}-letsencrypt.tar.gz.gpg | ssh root@${host} "tar xzf - -C /stow/etc"
 gpg --decrypt secrets/${suser}-mm.home.tar.gz.gpg | ssh root@${host} \
     "su - mattermost -c 'tar xzf - -C /home/mattermost'"
@@ -119,17 +122,6 @@ ssh -q root@${host} "bash -" << EOF
     # disable all sites but mattermost
     rm /etc/nginx/sites-*/*
 
-    if [[ ! -f /tmp/${mattermost_tarball} ]]; then
-        set -euo pipefail
-        wget ${mattermost_url} --no-verbose -O /tmp/${mattermost_tarball}
-        mkdir -p /opt/mattermost-${mattermost_version}
-        tar xf /tmp/${mattermost_tarball} -C /opt/mattermost-${mattermost_version} \
-            --strip-components 1 \
-            --exclude=mattermost/config/config.json
-        chown -R mattermost:mattermost /opt/mattermost-${mattermost_version}
-        chmod g+w -R /opt/mattermost-${mattermost_version}
-    fi
-
     mkdir -p /etc/letsencrypt
     # cli.ini is written by the bot package, but we bring our own
     rm -f /etc/letsencrypt/cli.ini
@@ -142,7 +134,7 @@ ssh -q root@${host} "bash -" << EOF
     stow -d /stow/etc -t /etc/nginx nginx
     stow -d /stow/etc -t /etc/letsencrypt letsencrypt
     stow -d /stow/lib -t /lib/systemd systemd
-    stow -d /stow/opt -t /opt/mattermost-${mattermost_version} mattermost-${mattermost_version}
+    stow -d /stow/opt -t /opt/mattermost mattermost
 
     systemctl enable fail2ban
     systemctl enable mattermost
