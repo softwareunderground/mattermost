@@ -7,12 +7,12 @@ Wants=nginx.service
 
 [Service]
 Type=notify
-ExecStart=/opt/mattermost-9.2.3/bin/mattermost
+ExecStart=/opt/mattermost/run.sh
 TimeoutStartSec=3600
 KillMode=mixed
 Restart=always
 RestartSec=10
-WorkingDirectory=/opt/mattermost-9.2.3
+WorkingDirectory=/opt/mattermost
 User=mattermost
 Group=mattermost
 LimitNOFILE=49152
