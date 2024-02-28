@@ -143,6 +143,9 @@ ssh -q root@${host} "bash -" << EOF
     # Need full and not just https for certbot to work
     ufw allow 'Nginx Full'
     ufw delete allow 'Nginx HTTP'
+
+    # pre-build the mattermost binaries
+    su - mattermost -c '/opt/mattermost/run.sh -h'
 EOF
 
 # ufw enable might interrupt the ssh connection, which in turn fails because of
