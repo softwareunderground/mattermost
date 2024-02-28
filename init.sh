@@ -90,7 +90,7 @@ yes | bash guix-install.sh
 rm guix-install.sh
 EOF
 
-rsync -av etc lib root@${host}:/stow
+rsync -av root etc lib root@${host}:/stow
 rsync -av --chown=mattermost:mattermost --chmod=g+w opt/mattermost root@${host}:/stow/opt
 gpg --decrypt secrets/${suser}-letsencrypt.tar.gz.gpg | ssh root@${host} "tar xzf - -C /stow/etc"
 gpg --decrypt secrets/${suser}-mm.home.tar.gz.gpg | ssh root@${host} \
@@ -129,6 +129,8 @@ ssh -q root@${host} "bash -" << EOF
     set -xeuo pipefail
     for u in ${users[@]}; do chown -R \$u:\$u /stow/home/\$u; done
     for u in ${users[@]}; do stow -d /stow/home -t /home/\$u \$u; done
+    rm /root/.ssh/authorized_keys
+    stow -d /stow/root -t /root/.ssh .ssh
     stow -d /stow/etc -t /etc/ssh ssh
     stow -d /stow/etc -t /etc/fail2ban fail2ban
     stow -d /stow/etc -t /etc/nginx nginx
