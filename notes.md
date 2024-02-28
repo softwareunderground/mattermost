@@ -106,6 +106,35 @@ email authentication from its environment.
 
 https://docs.hetzner.com/cloud/servers/faq#why-can-i-not-send-any-mails-from-my-server
 
+# Guix and upgrading mattermost
+The [GNU Guix](https://guix.gnu.org/) is used to manage the mattermost
+binaries, with the package definition in opt/mattermost/mattermost.scm. This is
+a pretty straight forward scheme (a lisp dialect) program that gives guix the
+information it needs. Its build environment is pinned, and to make it easier to
+execute this is captured in opt/mattermost/run.sh.
+
+For the maintainers, this means upgrading is done directly in the
+mattermost.scm file. To upgrade, update the version key and sha256, and push
+the new file to the server. It might be a good idea to check if everything is
+ok before restarting the service, which you can do on your own machine if you
+have guix installed, or on the server with run.sh --help.  When happy, restart the
+mattermost service.
+
+```bash
+export host=mattermost.softwareunderground.org
+rsync -av --chown=mattermost:mattermost --chmod=g+w opt/mattermost/mattermost.scm root@${host}:/stow/opt
+ssh ${host} /opt/mattermost/run.sh --help
+ssh root@${host} systemctl restart mattermost
+```
+
+This may write some new default configuration keys to the
+config, and it is a good idea to review those right away.
+
+```bash
+scp ${host}:/opt/mattermost/config/config.json opt/mattermost/config/config.json
+git diff
+```
+
 # Health checks
 TODO
 
