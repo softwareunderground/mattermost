@@ -32,7 +32,7 @@ done
 
 host="${argv[0]}"
 
-users=(j,santi)
+users=(j santi)
 
 debpkgs=(
     sudo
