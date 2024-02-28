@@ -24,6 +24,7 @@
         "EnableIncomingWebhooks": true,
         "EnableOutgoingWebhooks": true,
         "EnableCommands": true,
+        "OutgoingIntegrationRequestsTimeout": 30,
         "EnablePostUsernameOverride": false,
         "EnablePostIconOverride": false,
         "GoogleDeveloperKey": "",
@@ -106,7 +107,10 @@
         "ManagedResourcePaths": "",
         "EnableCustomGroups": true,
         "SelfHostedPurchase": true,
-        "AllowSyncedDrafts": true
+        "AllowSyncedDrafts": true,
+        "UniqueEmojiReactionLimitPerPost": 50,
+        "RefreshPostStatsRunTime": "00:00",
+        "MaximumPayloadSizeBytes": 100000
     },
     "TeamSettings": {
         "SiteName": "Software Underground",
@@ -536,7 +540,9 @@
         "EnableFileDeletion": false,
         "EnableBoardsDeletion": false,
         "MessageRetentionDays": 365,
+        "MessageRetentionHours": 0,
         "FileRetentionDays": 365,
+        "FileRetentionHours": 0,
         "BoardsRetentionDays": 365,
         "DeletionJobStartTime": "02:00",
         "BatchSize": 3000,
@@ -555,7 +561,9 @@
             "SMTPUsername": "",
             "SMTPPassword": "",
             "EmailAddress": "",
-            "SMTPServerTimeout": 1800
+            "SMTPServerTimeout": 1800,
+            "CustomSMTPServerName": "",
+            "CustomSMTPPort": "25"
         }
     },
     "JobSettings": {
@@ -620,8 +628,7 @@
     },
     "DisplaySettings": {
         "CustomURLSchemes": [],
-        "MaxMarkdownNodes": 0,
-        "ExperimentalTimezone": true
+        "MaxMarkdownNodes": 0
     },
     "GuestAccountsSettings": {
         "Enable": false,
@@ -648,5 +655,14 @@
     "ExportSettings": {
         "Directory": "./export",
         "RetentionDays": 30
+    },
+    "WranglerSettings": {
+        "PermittedWranglerRoles": [],
+        "AllowedEmailDomain": [],
+        "MoveThreadMaxCount": 100,
+        "MoveThreadToAnotherTeamEnable": false,
+        "MoveThreadFromPrivateChannelEnable": false,
+        "MoveThreadFromDirectMessageChannelEnable": false,
+        "MoveThreadFromGroupMessageChannelEnable": false
     }
 }
