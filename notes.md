@@ -20,10 +20,10 @@ This is pretty straight forward in the Hetzner console:
       iptables should do fine for now
     - At the time there is also no Hetzer firewall configured in the
       subscription
-7. No backups
-    - Hetzner disk backups add 25% on price, but ideally we should be able to
-      re-init and re-deploy, which reduces the need for backups somewhat
-    - Regular backup should also be in-server configured
+7. Enable backups
+    - We just use a full server backup as our backup solution. We can
+      occasionally pg-sql-dump the database (and mattermost data dirs) for
+      additional backups.
 8. No placement groups
     - Not relevant for our needs
 9. No cloud config
@@ -110,4 +110,5 @@ https://docs.hetzner.com/cloud/servers/faq#why-can-i-not-send-any-mails-from-my-
 TODO
 
 # Backup
-TODO
+We use hetzners full-server backup, which should serve us plenty for the time
+being. No other backup solution is in play.
