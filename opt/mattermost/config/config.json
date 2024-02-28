@@ -115,7 +115,7 @@
     "TeamSettings": {
         "SiteName": "Software Underground",
         "MaxUsersPerTeam": 2500,
-        "EnableJoinLeaveMessageByDefault": true,
+        "EnableJoinLeaveMessageByDefault": false,
         "EnableUserCreation": true,
         "EnableOpenServer": true,
         "EnableUserDeactivation": true,
