@@ -644,7 +644,7 @@
         "RemoteImageProxyOptions": ""
     },
     "CloudSettings": {
-        "CWSURL": "https://portal.test.cloud.mattermost.com",
+        "CWSURL": "https://customers.mattermost.com",
         "CWSAPIURL": "https://api.internal.test.cloud.mattermost.com",
         "CWSMock": false
     },
