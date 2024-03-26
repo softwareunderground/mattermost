@@ -136,11 +136,16 @@ git diff
 ```
 
 It is a good idea to run the rebuild _as the mattermost user_, as the guix time
-machine invocation could lead to a local checkout and rebuild:
+machine invocation could lead to an expensive git checkout and mattermost
+package rebuild:
 
 ```
 ssh -t ${host} "sudo -u mattermost /opt/mattermost/run.sh --help"
 ```
+
+This workflow will be improved and it will be sufficient to build new releases
+with your own users in future releases of guix with `guix time-machine -q`, see
+this [guix patch](https://issues.guix.gnu.org/65229).
 
 The upgrade process is *partially* captured in rebuild-mattermost.sh. The
 script will do everything except restarting the service, in order to prevent
