@@ -135,6 +135,22 @@ scp ${host}:/opt/mattermost/config/config.json opt/mattermost/config/config.json
 git diff
 ```
 
+It is a good idea to run the rebuild _as the mattermost user_, as the guix time
+machine invocation could lead to a local checkout and rebuild:
+
+```
+ssh -t ${host} "sudo -u mattermost /opt/mattermost/run.sh --help"
+```
+
+The upgrade process is *partially* captured in rebuild-mattermost.sh. The
+script will do everything except restarting the service, in order to prevent
+accidental outages and preserve some operational know-how. To run it, make the
+changes to mattermost.scm and run:
+
+```
+./rebuild-mattermost.sh mattermost.softwareunderground.org
+```
+
 # Health checks
 TODO
 
