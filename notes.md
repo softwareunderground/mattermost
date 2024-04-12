@@ -71,7 +71,7 @@ for some other maintainer. Setting up gpg is out of scope for this document.
 To encrypt/decrypt:
 ```bash
 $ gpg --encrypt --output secrets/j-letsencrypt.tar.gz.gpg --recipient j@lambda.is letsencrypt.tar.gz
-$ gpg --decrypt -o letsencrypt.tar.gz j-letsencrypt.tar.gz
+$ gpg --decrypt -o letsencrypt.tar.gz j-letsencrypt.tar.gz.gpg
 ```
 
 The naming `<user>-tarball.tar.gz.gpg` is conventional, but helps scripting.
