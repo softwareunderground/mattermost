@@ -131,7 +131,7 @@ ssh -q root@${host} "bash -" << EOF
     set -xeuo pipefail
     for u in ${users[@]}; do chown -R \$u:\$u /stow/home/\$u; done
     for u in ${users[@]}; do stow -d /stow/home -t /home/\$u \$u; done
-    stow -d /stow/root -t /root root
+    stow -d /stow -t /root root
     stow -d /stow/etc -t /etc/ssh ssh
     stow -d /stow/etc -t /etc/fail2ban fail2ban
     stow -d /stow/etc -t /etc/nginx nginx
