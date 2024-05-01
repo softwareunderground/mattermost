@@ -77,9 +77,7 @@ ssh root@${host} "bash - " << EOF
     mkdir -p /stow
 EOF
 
-if [ -d root ]; then
-    rsync -av --chown=root:root root root@${host}:/stow
-fi
+rsync -av --chown=root:root root root@${host}:/stow
 
 for user in ${users[@]}; do
     if [ -d home/$user ]; then
