@@ -122,7 +122,7 @@ mattermost service.
 
 ```bash
 export host=mattermost.softwareunderground.org
-rsync -av --chown=mattermost:mattermost --chmod=g+w opt/mattermost/mattermost.scm root@${host}:/stow/opt
+rsync -av --chown=mattermost:mattermost --chmod=g+w opt/mattermost/mattermost.scm root@${host}:/stow/opt/mattermost
 ssh ${host} /opt/mattermost/run.sh --help
 ssh root@${host} systemctl restart mattermost
 ```

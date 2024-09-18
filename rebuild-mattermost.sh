@@ -3,5 +3,5 @@
 set -euo pipefail
 host="$1"
 
-rsync -av --chown=mattermost:mattermost --chmod=g+w opt/mattermost/mattermost.scm root@"${host}":/stow/opt
+rsync -av --chown=mattermost:mattermost --chmod=g+w opt/mattermost/mattermost.scm root@"${host}":/stow/opt/mattermost
 ssh -t "${host}" "sudo -u mattermost /opt/mattermost/run.sh --help"
