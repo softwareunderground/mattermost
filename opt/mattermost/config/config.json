@@ -582,7 +582,7 @@
         "AllowInsecureDownloadURL": false,
         "EnableHealthCheck": true,
         "Directory": "./plugins",
-        "ClientDirectory": "./client/plugins",
+        "ClientDirectory": "./client-plugins",
         "Plugins": {
             "com.mattermost.calls": {
                 "allowscreensharing": true,
