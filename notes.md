@@ -156,6 +156,15 @@ changes to mattermost.scm and run:
 ./rebuild-mattermost.sh mattermost.softwareunderground.org
 ```
 
+## Plugins
+Plugins are managed manually, that is, not with guix and not with a
+remote store. Mattermost needs to own the plugin files and directories
+to load them, and guix-managed dirs would be owned by root. So far
+plugins have either been built in or manually extracted into the
+/opt/mattermost/plugins dir, but this could be made easier by enabling
+uploads in the config.json. If we start using even more plugins this
+might be an option.
+
 # Health checks
 TODO
 
