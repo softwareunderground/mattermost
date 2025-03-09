@@ -637,6 +637,9 @@
             }
         },
         "PluginStates": {
+            "com.github.matterpoll.matterpoll": {
+                "Enable": true
+            },
             "com.mattermost.calls": {
                 "Enable": true
             },
