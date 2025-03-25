@@ -57,6 +57,29 @@ this case: `mattermost.softwareunderground.org`.
 - Mattermost documentation: https://docs.mattermost.com/guides/use-mattermost.html
 
 
+## Creating polls
+
+In March 2025 we installed the [`matterpoll`][matterpoll] plugin that allow us
+to create polls directly in Mattermost channels.
+
+A poll can be created by any user using the `/poll` command followed by the
+question and the options users can choose from. For example:
+
+```
+/poll "Is Matterpoll great?" "I love it" "Strongly agree" "Yes, sure"
+```
+
+> [!TIP]
+> When creating a poll, post a new message with just the instruction to create
+> the poll. Including the poll command at the end of a regular Markdown post
+> won't create the poll.
+
+Polls can be configured to be anonymous, to show the voting results while the
+poll is still running, to allow users to vote more than one option or add their
+own custom option. Refer to [`matterpoll`][matterpoll] documentation on how to
+configure your poll.
+
+
 ## Found a bug?
 
 If you run into any issue while using our Mattermost instance, feel free to
@@ -72,3 +95,4 @@ leave a comment in the [~swung-mattermost][swung-mattermost.channel] channel or
 [create-account]: https://mattermost.softwareunderground.org/signup_user_complete
 [mattermost]: https://mattermost.com/
 [selfhosting]: https://en.wikipedia.org/wiki/Self-hosting_(web_services)
+[matterpoll]: https://github.com/matterpoll/matterpoll
