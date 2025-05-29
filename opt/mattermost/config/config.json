@@ -386,6 +386,7 @@
         "BaseDN": "",
         "BindUsername": "",
         "BindPassword": "",
+        "MaximumLoginAttempts": 10,
         "UserFilter": "",
         "GroupFilter": "",
         "GuestFilter": "",
