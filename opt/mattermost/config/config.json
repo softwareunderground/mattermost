@@ -36,7 +36,6 @@
         "EnableDeveloper": false,
         "DeveloperFlags": "",
         "EnableClientPerformanceDebugging": false,
-        "EnableOpenTracing": false,
         "EnableSecurityFixAlert": true,
         "EnableInsecureOutgoingConnections": false,
         "AllowedUntrustedInternalConnections": "",
@@ -67,6 +66,7 @@
         "EnableEmojiPicker": true,
         "PostEditTimeLimit": -1,
         "TimeBetweenUserTypingUpdatesMilliseconds": 5000,
+        "EnableCrossTeamSearch": true,
         "EnablePostSearch": true,
         "EnableFileSearch": true,
         "MinimumHashtagLength": 3,
@@ -115,7 +115,9 @@
         "MaximumPayloadSizeBytes": 100000,
         "MaximumURLLength": 2048,
         "ScheduledPosts": true,
-        "EnableWebHubChannelIteration": false
+        "EnableWebHubChannelIteration": false,
+        "FrameAncestors": "",
+        "DeleteAccountLink": ""
     },
     "TeamSettings": {
         "SiteName": "Software Underground",
@@ -189,7 +191,8 @@
         "FileMaxBackups": 0,
         "FileCompress": false,
         "FileMaxQueueSize": 1000,
-        "AdvancedLoggingJSON": {}
+        "AdvancedLoggingJSON": {},
+        "Certificate": ""
     },
     "NotificationLogSettings": {
         "EnableConsole": true,
@@ -306,6 +309,9 @@
         "AboutLink": "https://mattermost.com/pl/about-mattermomst",
         "HelpLink": "https://mattermost.com/pl/help/",
         "ReportAProblemLink": "https://mattermost.com/pl/report-a-bug",
+        "ReportAProblemType": "default",
+        "ReportAProblemMail": "",
+        "AllowDownloadLogs": true,
         "ForgotPasswordLink": "",
         "SupportEmail": "mattermost@softwareunderground.org",
         "CustomTermsOfServiceEnabled": false,
@@ -404,6 +410,7 @@
         "LoginIdAttribute": "",
         "PictureAttribute": "",
         "SyncIntervalMinutes": 60,
+        "ReAddRemovedMembers": false,
         "SkipCertificateVerification": false,
         "PublicCertificateFile": "",
         "PrivateKeyFile": "",
@@ -470,13 +477,19 @@
         "AppDownloadLink": "https://mattermost.com/pl/download-apps",
         "AndroidAppDownloadLink": "https://mattermost.com/pl/android-app/",
         "IosAppDownloadLink": "https://mattermost.com/pl/ios-app/",
-        "MobileExternalBrowser": false
+        "MobileExternalBrowser": false,
+        "MobileEnableBiometrics": false,
+        "MobilePreventScreenCapture": false,
+        "MobileJailbreakProtection": false,
+        "MobileEnableSecureFilePreview": false,
+        "MobileAllowPdfLinkNavigation": false
     },
     "CacheSettings": {
         "CacheType": "lru",
         "RedisAddress": "",
         "RedisPassword": "********************************",
         "RedisDB": -1,
+        "RedisCachePrefix": "",
         "DisableClientCache": false
     },
     "ClusterSettings": {
@@ -489,6 +502,7 @@
         "UseIPAddress": true,
         "EnableGossipCompression": true,
         "EnableExperimentalGossipEncryption": false,
+        "EnableGossipEncryption": false,
         "ReadOnlyConfig": true,
         "GossipPort": 8074
     },
@@ -497,7 +511,8 @@
         "BlockProfileRate": 0,
         "ListenAddress": ":8067",
         "EnableClientMetrics": true,
-        "EnableNotificationMetrics": true
+        "EnableNotificationMetrics": true,
+        "ClientSideUserIds": []
     },
     "ExperimentalSettings": {
         "ClientSideCertEnable": false,
@@ -511,7 +526,8 @@
         "DelayChannelAutocomplete": false,
         "DisableWakeUpReconnectHandler": false,
         "UsersStatusAndProfileFetchingPollIntervalMilliseconds": 3000,
-        "YoutubeReferrerPolicy": false
+        "YoutubeReferrerPolicy": false,
+        "ExperimentalChannelCategorySorting": false
     },
     "AnalyticsSettings": {
         "MaxUsersForStatistics": 2500
@@ -534,6 +550,7 @@
         "AggregatePostsAfterDays": 365,
         "PostsAggregatorJobStartTime": "03:00",
         "IndexPrefix": "",
+        "GlobalSearchPrefix": "",
         "LiveIndexingBatchSize": 1,
         "BatchSize": 10000,
         "RequestTimeoutSeconds": 30,
@@ -563,7 +580,8 @@
         "DeletionJobStartTime": "02:00",
         "BatchSize": 3000,
         "TimeBetweenBatchesMilliseconds": 100,
-        "RetentionIdsBatchSize": 100
+        "RetentionIdsBatchSize": 100,
+        "PreservePinnedPosts": false
     },
     "MessageExportSettings": {
         "EnableExport": false,
@@ -709,6 +727,55 @@
         "EnableSharedChannels": false,
         "EnableRemoteClusterService": false,
         "DisableSharedChannelsStatusSync": false,
-        "MaxPostsPerSync": 50
+        "SyncUsersOnConnectionOpen": false,
+        "GlobalUserSyncBatchSize": 25,
+        "MaxPostsPerSync": 50,
+        "MemberSyncBatchSize": 20
+    },
+    "AccessControlSettings": {
+        "EnableAttributeBasedAccessControl": false,
+        "EnableChannelScopeAccessControl": false,
+        "EnableUserManagedAttributes": false
+    },
+    "ContentFlaggingSettings": {
+        "EnableContentFlagging": false,
+        "ReviewerSettings": {
+            "CommonReviewers": true,
+            "CommonReviewerIds": [],
+            "TeamReviewersSetting": {},
+            "SystemAdminsAsReviewers": false,
+            "TeamAdminsAsReviewers": true
+        },
+        "NotificationSettings": {
+            "EventTargetMapping": {
+                "assigned": [
+                    "reviewers"
+                ],
+                "dismissed": [
+                    "reviewers",
+                    "reporter"
+                ],
+                "flagged": [
+                    "reviewers"
+                ],
+                "removed": [
+                    "reviewers",
+                    "author",
+                    "reporter"
+                ]
+            }
+        },
+        "AdditionalSettings": {
+            "Reasons": [
+                "Inappropriate content",
+                "Sensitive data",
+                "Security concern",
+                "Harassment or abuse",
+                "Spam or phishing"
+            ],
+            "ReporterCommentRequired": true,
+            "ReviewerCommentRequired": true,
+            "HideFlaggedContent": true
+        }
     }
 }
