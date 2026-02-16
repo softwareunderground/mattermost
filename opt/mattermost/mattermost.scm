@@ -6,14 +6,14 @@
 (define-public mattermost
   (package
     (name "mattermost")
-    (version "10.11.10")
+    (version "10.11.11")
     (source
       (origin
         (method url-fetch)
         (uri (string-append "https://releases.mattermost.com/" version
                             "/mattermost-" version "-linux-amd64.tar.gz"))
         (sha256
-          (base32 "15j0hb9a95yllfnxi08dcai80jfs86swg9f41haqs6vybgc2dnmy"))))
+          (base32 "1v5pra7pdw7i8y73gcfprxx8kz4clz1dlshr4qz4avkfk5yw9yll"))))
     (build-system copy-build-system)
     (synopsis "mattermost server")
     (description "mattermost server")
