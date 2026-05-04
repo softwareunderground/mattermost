@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 set -euo pipefail
-host="$1"
+host="${1:-mattermost.softwareunderground.org}"
 
 rsync -av --chown=mattermost:mattermost --chmod=g+w opt/mattermost/mattermost.scm root@"${host}":/stow/opt/mattermost
 ssh -t "${host}" "sudo -u mattermost /opt/mattermost/run.sh --help"
