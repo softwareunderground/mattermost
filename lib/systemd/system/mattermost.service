@@ -17,6 +17,7 @@ User=mattermost
 Group=mattermost
 LimitNOFILE=49152
 EnvironmentFile=/home/mattermost/mm.env
+Environment="PGPASSFILE=/home/mattermost/.pgpass"
 
 [Install]
 WantedBy=multi-user.target
