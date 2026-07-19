@@ -216,6 +216,7 @@
         "Directory": "./data/",
         "EnablePublicLink": false,
         "ExtractContent": true,
+        "ExtractContentTimeout": 10,
         "ArchiveRecursion": false,
         "PublicLinkSalt": "yeydcy71g8cm3ukjbe8jpqgeu8abeigz",
         "InitialFont": "nunito-bold.ttf",
