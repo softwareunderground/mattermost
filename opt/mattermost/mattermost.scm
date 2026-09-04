@@ -7,14 +7,14 @@
 (define-public mattermost
   (package
     (name "mattermost")
-    (version "11.7.7")
+    (version "11.7.10")
     (source
       (origin
         (method url-fetch)
         (uri (string-append "https://releases.mattermost.com/" version
                             "/mattermost-" version "-linux-amd64.tar.gz"))
         (sha256
-          (base32 "0z3dx8lx7yd7js65v467rfvb1c7ngs9bqy8g3cddkc0sslp33674"))))
+          (base32 "0w72h49hi47ax8abn1as0i3m70jvyfi5dcirvv7f846kvpvvcrmv"))))
     (arguments
      (list
       #:phases
@@ -33,7 +33,7 @@
                       version))
                 (file-name "mostlymatter")
                 (sha256
-                 (base32 "0r8alhpkf9mf7jxf2njlja7pd6lyd2pcjryvimq9cbff0jl9nxvz"))))))
+                 (base32 "0m6l4kmxydnda7r6g6kjx4iq49aicdl51175s5ylpzpsq6w7dlnx"))))))
     (synopsis "mattermost server")
     (description "mattermost server")
     (home-page "mattermost.com")
